@@ -1,0 +1,4 @@
+= Playground
+
+**Kézako?** +
+Mon _playground_ de codes unitaires, en multiplateform dans un build gradle.
