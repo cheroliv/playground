@@ -1,3 +1,6 @@
+@file:OptIn(DelicateCoroutinesApi::class)
+@file:Suppress("OPT_IN_IS_NOT_ENABLED","VARIABLE_WITH_REDUNDANT_INITIALIZER")
+
 package education.cccp.coroutines
 
 import kotlinx.coroutines.*
@@ -27,7 +30,7 @@ class CoroutinesTutoTest {
 
     //page 53
     fun firstCoroutine() {
-        (1..10000).forEach {
+        (1..500).forEach {
             GlobalScope.launch {
                 val threadName = currentThread().name
                 log.info("$it printed on thread $threadName")
