@@ -1,18 +1,33 @@
-package education.cccp.text
+package education.cccp.programming
 
 
 import education.cccp.data.datas.PI
 import education.cccp.data.datas.SEPARATOR
 import education.cccp.data.datas.programmingLanguages
+import org.junit.Assert
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-fun concat(
-    texts: List<String>,
-    separator: String = SEPARATOR
-): String = texts.joinToString(separator)
+
+/**
+ * écriture d'un test unitaire, execution locale.
+ * Manipulation d'éléments de langage et de quelques fonctions utiles.
+ * (listof(), String.drop(), String.dropLast())
+ */
 
 class ConcatFunctionTest {
+    fun concat(
+        texts: List<String>,
+        separator: String = SEPARATOR
+    ): String = texts.joinToString(separator)
+    @Suppress("unused")
+    fun List<String>.concat(): String = joinToString(SEPARATOR)
+
+    @Test
+    fun addition_isCorrect() {
+        Assert.assertEquals(4, 2 + 2)
+    }
+
     @Test
     fun testSomePrinties() {
         println("Hello World Android Basics")
