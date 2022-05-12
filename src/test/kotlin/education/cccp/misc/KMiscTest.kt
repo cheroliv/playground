@@ -1,10 +1,11 @@
 package education.cccp.misc
 
 import java.util.*
+import kotlin.test.Test
 
-object KMisc {
-    @JvmStatic
-    fun main(main: Array<String>) {
+class KMiscTest {
+    @Test
+    fun test_misc() {
 //        String[] strArr = {"foo", "bar", "baz", "qux", "quux", "corge", "grault", "garply", "waldo", "fred", "plugh", "xyzzy", "thud"};
 //        System.out.println("before : strArr = " + Arrays.toString(strArr));
 //        Arrays.binarySearch(Arrays.copyOf(strArr,strArr.length));

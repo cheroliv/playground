@@ -1,4 +1,4 @@
-package education.cccp.misc
+package education.cccp.math
 
 import groovy.transform.CompileStatic
 

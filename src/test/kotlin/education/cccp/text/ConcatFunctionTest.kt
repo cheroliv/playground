@@ -1,22 +1,11 @@
 package education.cccp.text
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
 
-const val PI = 3.1415
-const val SEPARATOR = ", "
-
-val dataList: List<String> = listOf(
-    "Android",
-    "Kotlin",
-    "Java",
-    "Javascript",
-    "Typescript",
-    "Groovy",
-    "Go",
-    "Swift",
-    "iOS"
-)
+import education.cccp.data.datas.PI
+import education.cccp.data.datas.SEPARATOR
+import education.cccp.data.datas.programmingLanguages
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 fun concat(
     texts: List<String>,
@@ -28,15 +17,15 @@ class ConcatFunctionTest {
     fun testSomePrinties() {
         println("Hello World Android Basics")
         println("PI: $PI")
-        println(dataList)
-        println(concat(dataList))
+        println(programmingLanguages)
+        println(concat(programmingLanguages))
     }
 
     @Test
     fun test_concat_isCorrect() {
         assertEquals(
-            concat(dataList),
-            dataList.toString()
+            concat(programmingLanguages),
+            programmingLanguages.toString()
                 //pour supprimer le premier et dernier caractère,
                 // afin de valider l'egalité du test unitaire
                 .drop(1)//suprimer les n premier caracteres de la chaine

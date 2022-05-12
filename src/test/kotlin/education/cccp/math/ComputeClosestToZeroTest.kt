@@ -14,7 +14,7 @@ class ComputeClosestToZeroTest {
     private val temperatures = arrayOf(-12, -15, -2, 1, 17)
 
     @Test
-    fun `test computeClosestToZero sur temperatures doit etre 1`() {
+    fun `test computeClosestToZero sur températures doit etre 1`() {
         assertEquals(computeClosestToZero(temperatures), 1)
     }
 }
