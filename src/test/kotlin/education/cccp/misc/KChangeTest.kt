@@ -20,7 +20,6 @@ class KChangeTest {
         private val bill5: Long = 0,
         private val bill10: Long = 0
     ) {
-
         companion object {
             // Do not modify this method signature
             fun optimalChange(s: Long): JChange {

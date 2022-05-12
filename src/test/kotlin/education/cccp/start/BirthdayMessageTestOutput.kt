@@ -1,4 +1,4 @@
-package education.cccp.akia
+package education.cccp.start
 
 import kotlin.test.Test
 
