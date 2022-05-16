@@ -8,7 +8,7 @@ plugins {
     kotlin("jvm") version (kotlinVersion)
 }
 
-group = "com.github.cheroliv"
+group = "com.cheroliv"
 version = "0.0.0"
 
 
