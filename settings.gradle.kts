@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap/") }
-        maven { url = uri("https://jitpack.io") }
+//        maven { url = uri("https://jitpack.io") }
     }
 }
 enableFeaturePreview("ONE_LOCKFILE_PER_PROJECT")
