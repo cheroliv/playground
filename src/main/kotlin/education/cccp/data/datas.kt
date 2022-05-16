@@ -6,6 +6,18 @@ import java.text.Normalizer.normalize
 
 @Suppress("ClassName")
 object datas {
+    var categories = arrayOf(
+        "boissons",
+        "gateaux",
+        "fruits",
+        "légumes"
+    )
+    var articles = arrayOf(
+        arrayOf("coca-cola", "pepsi", "orangina"),
+        arrayOf("pepito", "granola", "makrout"),
+        arrayOf("orange", "raisin", "pomme"),
+        arrayOf("carrote", "tomate", "oignon")
+    )
     const val PI = 3.1415
     const val SEPARATOR = ", "
     val programmingLanguages: List<String> = listOf(

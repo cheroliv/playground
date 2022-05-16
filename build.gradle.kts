@@ -8,11 +8,9 @@ plugins {
     kotlin("jvm") version (kotlinVersion)
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap/") }
-}
+group = "com.github.cheroliv"
+version = "0.0.0"
+
 
 dependencies {
     // Kotlin lib: jdk8, reflexion, coroutines
