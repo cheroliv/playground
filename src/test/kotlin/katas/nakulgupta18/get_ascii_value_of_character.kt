@@ -15,8 +15,8 @@ fun getAscii(c: Char): Int = c.toByte().toInt()
 class TestGetAscii {
     @Test
     fun `Basic tests`() {
-        assertEquals(65, getAscii('A'))
-        assertEquals(32, getAscii(' '))
-        assertEquals(33, getAscii('!'))
+        assertEquals(expected = 65, getAscii('A'))
+        assertEquals(expected = 32, getAscii(' '))
+        assertEquals(expected = 33, getAscii('!'))
     }
 }

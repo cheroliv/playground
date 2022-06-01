@@ -4,7 +4,6 @@ package education.cccp.programming
 import education.cccp.data.datas.PI
 import education.cccp.data.datas.SEPARATOR
 import education.cccp.data.datas.programmingLanguages
-import org.junit.Assert
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -17,7 +16,7 @@ import kotlin.test.assertEquals
 
 class ConcatFunctionTest {
     fun concat(
-        texts: List<String>,
+        texts: Array<String>,
         separator: String = SEPARATOR
     ): String = texts.joinToString(separator)
     @Suppress("unused")
@@ -25,7 +24,7 @@ class ConcatFunctionTest {
 
     @Test
     fun addition_isCorrect() {
-        Assert.assertEquals(4, 2 + 2)
+        assertEquals(4, 2 + 2)
     }
 
     @Test

@@ -6,21 +6,38 @@ import java.text.Normalizer.normalize
 
 @Suppress("ClassName")
 object datas {
-    var categories = arrayOf(
+
+    val basics: Array<String> =arrayOf(
+    "foo",
+    "bar",
+    "baz",
+    "qux",
+    "quux",
+    "corge",
+    "grault",
+    "garply",
+    "waldo",
+    "fred",
+    "plugh",
+    "xyzzy",
+    "thud"
+    )
+
+    var categories: Array<String> = arrayOf(
         "boissons",
         "gateaux",
         "fruits",
         "légumes"
     )
-    var articles = arrayOf(
+    var articles: Array<Array<String>> = arrayOf(
         arrayOf("coca-cola", "pepsi", "orangina"),
         arrayOf("pepito", "granola", "makrout"),
         arrayOf("orange", "raisin", "pomme"),
         arrayOf("carrote", "tomate", "oignon")
     )
-    const val PI = 3.1415
+    const val PI: Double = 3.1415
     const val SEPARATOR = ", "
-    val programmingLanguages: List<String> = listOf(
+    val programmingLanguages: Array<String> = arrayOf(
         "Android",
         "Kotlin",
         "Java",
@@ -32,7 +49,7 @@ object datas {
         "iOS"
     )
     @JvmStatic
-    val intellectuals: List<String> = listOf(
+    val intellectuals: Array<String> = arrayOf(
         "Karl Marx",
         "Jean-Jacques Rousseau",
         "Victor Hugo",
@@ -70,7 +87,7 @@ object datas {
                 ""
             )
 
-    fun List<String>.nameToLogin(): List<String> =
+    fun Array<String>.nameToLogin(): Array<String> =
         map {
             stripAccents(
                 it.lowercase().replace(
@@ -78,14 +95,14 @@ object datas {
                     newChar = '.'
                 )
             )
-        }
+        }.toTypedArray()
 
-    fun List<String>.nameToLoginNormalizer(): List<String> =
+    fun Array<String>.nameToLoginNormalizer(): Array<String> =
         map {
             it.lowercase()
                 .replace(' ', '.')
                 .unaccent()
-        }
+        }.toTypedArray()
 }
 
 

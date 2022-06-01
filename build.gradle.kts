@@ -8,8 +8,20 @@ plugins {
     kotlin("jvm") version (kotlinVersion)
 }
 
-group = "com.cheroliv"
+group = "playground"
 version = "0.0.0"
+
+sourceSets {
+    getByName("test"){
+        java.srcDir("src/scripts/groovy")
+    }
+    getByName("test"){
+        java.srcDir("src/scripts/kscript")
+    }
+    getByName("test"){
+        java.srcDir("src/test/javascript")
+    }
+}
 
 
 dependencies {
@@ -36,9 +48,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     // ProjectReactor.io
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${properties["coroutines_kotlin_reactor"]}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${properties["reactor_kotlin_coroutines_version"]}")
     testImplementation("io.projectreactor.kotlin:reactor-kotlin-extensions:${properties["reactor_kotlin_version"]}")
     testImplementation("io.projectreactor:reactor-test:${properties["reactor_version"]}")
+    testImplementation(kotlin("script-runtime"))
 
 }
 
