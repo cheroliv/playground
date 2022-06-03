@@ -6,6 +6,5 @@ bin
 codes_template
 .classpath
 .project
-
-/playground.code-workspace
 local.properties
+/playground.code-workspace
