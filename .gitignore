@@ -8,3 +8,4 @@ codes_template
 .project
 
 /playground.code-workspace
+local.properties
