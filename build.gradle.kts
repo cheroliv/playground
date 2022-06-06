@@ -53,6 +53,10 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test:${properties["reactor_version"]}")
     testImplementation(kotlin("script-runtime"))
 
+    // Arrow.kt
+    testImplementation(platform("io.arrow-kt:arrow-stack:1.0.1"))
+    testImplementation("io.arrow-kt:arrow-core")
+
 }
 
 gradle.startParameter.isContinueOnFailure = true
