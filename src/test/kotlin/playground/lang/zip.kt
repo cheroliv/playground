@@ -2,6 +2,7 @@
 //(4)
 package playground.lang
 
+import playground.Data
 import kotlin.test.Test
 
 class ZipTest {
@@ -12,32 +13,14 @@ class ZipTest {
         // La liste renvoyée a la longueur de la collection la plus courte.
 
         // list des Pair<String,Boolean> associant les elements par occurence
-        println(listDeTextes.zip(listDeBooleens))
+        println(Data.basics.zip(someBooleans))
 
         //list des résultats du texte et de la condition contains() rapproché par pair
-        println(listDeTextes.zip(listDeTextes.map { it.contains("t") }))
+        println(Data.basics.zip(Data.basics.map { it.contains("t") }))
     }
 }
 
-val listDeTextes: List<String>
-    get() = listOf(
-        "foo",
-        "bar",
-        "baz",
-        "qux",
-        "quux",
-        "corge",
-        "grault",
-        "garply",
-        "waldo",
-        "fred",
-        "plugh",
-        "xyzzy",
-        "thud"
-    )
-
-val listDeBooleens
-    get() = listOf(
+val someBooleans = arrayOf(
         false,
         true,
         true,

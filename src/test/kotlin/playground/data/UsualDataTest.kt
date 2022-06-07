@@ -1,8 +1,8 @@
 package playground.data
 
-import playground.data.datas.nameToLoginNormalizer
+import playground.Data.nameToLoginNormalizer
 import kotlinx.coroutines.*
-import playground.data.datas
+import playground.Data
 import kotlin.test.Test
 
 class UsualDataTest {
@@ -20,7 +20,7 @@ class UsualDataTest {
         runBlocking {
             println("the sum is ${result.sumOf { it.await() }}")
         }
-        println(datas.intellectuals.nameToLoginNormalizer())
+        println(Data.intellectuals.nameToLoginNormalizer())
     }
 
 }

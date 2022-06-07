@@ -25,9 +25,9 @@ class LambdaTest {
         //fonction anonyme
         // (callback), affecté à une variable
         // fonction expression body style
-        val foisDeuxFunAno: (Int) -> Int = fun(x: Int): Int = x * 2
+        @Suppress("UNUSED_VARIABLE") val foisDeuxFunAno: (Int) -> Int = fun(x: Int): Int = x * 2
         //fonction block body style
-        val additionFunAno: (Int, Int) -> Int = fun(x: Int, y: Int): Int {
+        @Suppress("UNUSED_VARIABLE") val additionFunAno: (Int, Int) -> Int = fun(x: Int, y: Int): Int {
             return x + y
         }
 

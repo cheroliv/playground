@@ -13,9 +13,9 @@ class KMiscTest {
 //        Arrays.sort(strArr);
         val rand = Random()
         // Obtain a number between [0 - 49].
-        val n = rand.nextInt(50)
+        @Suppress("UNUSED_VARIABLE") val n = rand.nextInt(50)
         val intArr = arrayOfNulls<Int>(50)
-        Arrays.setAll(intArr) { i: Int -> rand.nextInt(50) }
+        Arrays.setAll(intArr) { rand.nextInt(50) }
         println(intArr.contentToString())
         val intArrCopy = intArr.copyOf(intArr.size)
         Arrays.sort(intArrCopy)

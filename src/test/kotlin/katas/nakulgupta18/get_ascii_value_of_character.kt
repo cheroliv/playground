@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
  *
  */
 
-fun getAscii(c: Char): Int = c.toByte().toInt()
+fun getAscii(c: Char): Int = c.code.toByte().toInt()
 
 
 class TestGetAscii {

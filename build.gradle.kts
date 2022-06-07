@@ -1,4 +1,6 @@
+import org.gradle.api.JavaVersion.VERSION_1_8
 import org.gradle.api.tasks.testing.logging.TestLogEvent.*
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.ByteArrayOutputStream
 
 plugins {
@@ -7,22 +9,6 @@ plugins {
     groovy
     kotlin("jvm") version (kotlinVersion)
 }
-
-group = "playground"
-version = "0.0.0"
-
-sourceSets {
-    getByName("test"){
-        java.srcDir("src/scripts/groovy")
-    }
-    getByName("test"){
-        java.srcDir("src/scripts/kscript")
-    }
-    getByName("test"){
-        java.srcDir("src/test/javascript")
-    }
-}
-
 
 dependencies {
     // Kotlin lib: jdk8, reflexion, coroutines
@@ -52,11 +38,24 @@ dependencies {
     testImplementation("io.projectreactor.kotlin:reactor-kotlin-extensions:${properties["reactor_kotlin_version"]}")
     testImplementation("io.projectreactor:reactor-test:${properties["reactor_version"]}")
     testImplementation(kotlin("script-runtime"))
-
     // Arrow.kt
     testImplementation(platform("io.arrow-kt:arrow-stack:1.0.1"))
     testImplementation("io.arrow-kt:arrow-core")
+}
 
+group = "playground"
+version = "0.0.0"
+
+sourceSets {
+    getByName("test"){
+        java.srcDir("src/scripts/groovy")
+    }
+    getByName("test"){
+        java.srcDir("src/scripts/kscript")
+    }
+    getByName("test"){
+        java.srcDir("src/test/javascript")
+    }
 }
 
 gradle.startParameter.isContinueOnFailure = true
@@ -68,10 +67,12 @@ tasks.withType<Test> {
 //    systemProperties(java.lang.System.getProperties())
 }
 
-// config JVM target to 1.8 for kotlin compilation tasks
-//tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-//    kotlinOptions.jvmTarget = properties["jvm_target"] as String
-//}
+tasks.withType<KotlinCompile>().configureEach {
+    kotlinOptions.apply {
+        jvmTarget = VERSION_1_8.toString()
+        kotlinOptions.freeCompilerArgs += properties["opt_in_kotlin_compiler_option"].toString()
+    }
+}
 
 
 open class PrintHerokuVersion : Exec() {

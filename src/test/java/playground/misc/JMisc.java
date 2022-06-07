@@ -15,11 +15,8 @@ public class JMisc {
         Random rand = new Random();
 // Obtain a number between [0 - 49].
         int n = rand.nextInt(50);
-
         Integer[] intArr = new Integer[50];
-        for (int i = 0; i < intArr.length; i++) {
-            intArr[i] = rand.nextInt(50);
-        }
+        Arrays.setAll(intArr, (int i) -> rand.nextInt(50));
         System.out.println(Arrays.toString(intArr));
         Integer[] intArrCopy = Arrays.copyOf(intArr, intArr.length);
         Arrays.sort(intArrCopy);

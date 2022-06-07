@@ -1,9 +1,9 @@
 package playground.programming
 
 
-import playground.data.datas.PI
-import playground.data.datas.SEPARATOR
-import playground.data.datas.programmingLanguages
+import playground.Data.PI
+import playground.Data.SEPARATOR
+import playground.Data.programmingLanguages
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

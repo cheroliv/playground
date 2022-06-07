@@ -30,7 +30,7 @@ import kotlin.test.assertEquals
 data class Consec(val firstPos: Int, val motif: String)
 
 fun longestConsec(strings: Array<String>, k: Int): String {
-    val length = strings.size
+    @Suppress("UNUSED_VARIABLE") val length = strings.size
     var result = ""
     val lengthAtIndex = strings.map { it.length }
     val posByKConsec = mutableListOf<Int>()
