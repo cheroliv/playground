@@ -1,9 +1,9 @@
-package playground.misc
+package playground.programming
 
 import java.util.*
 import kotlin.test.Test
 
-class KMiscTest {
+class Array4FunTest {
     @Test
     fun test_misc() {
 //        String[] strArr = {"foo", "bar", "baz", "qux", "quux", "corge", "grault", "garply", "waldo", "fred", "plugh", "xyzzy", "thud"};

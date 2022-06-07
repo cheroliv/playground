@@ -1,11 +1,15 @@
 package playground.misc;
 
+import org.junit.jupiter.api.Test;
+
 class JChange {
+
     private long coin2 = 0;
     private long bill5 = 0;
     private long bill10 = 0;
 
-    public static void main(String[] args) {
+    @Test
+    public void main() {
 
         long s = 1065L; // Change this value to perform other tests
         JChange m = JChange.optimalChange(s);
