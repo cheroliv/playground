@@ -1,13 +1,21 @@
-package playground.misc
+package playground.programming
 
 import kotlin.test.Test
 
+/**
+ * str est composé de deux sequences de caracteres séparé par un espace
+ * la séquence pattern
+ *  +: un caractere de a - z
+ *  $: un caractere de 1 - 9
+ *  *: trois caracteres par defaut
+ *      sauf si {N} N=nb de char pour cette etoile et N>=1
+ */
 // TODO à terminer
 const val sample = "++*{5} gheeeee"
 
 class StringChallengeTest {
     @Test
-    fun main() {
+    fun test_stringChallenge() {
         println(stringChallenge(sample))
     }
 }
