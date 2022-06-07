@@ -28,7 +28,7 @@ fun stringChallenge(str: String): Boolean {
 
     do {
         if ((pattern[indexPatternChecked] == '+' &&
-                    motif[indexMotifChecked].isBelongToAZ()) ||
+                    motif[indexMotifChecked].isBelongToAzMinus()) ||
             pattern[indexPatternChecked] == '$' &&
             motif[indexMotifChecked].isBelongTo19()
         ) {
@@ -78,7 +78,7 @@ fun String.whereIsWhiteSpace(): Int {
     return result
 }
 
-fun Char.isBelongToAZ(): Boolean = (this == 'a') ||
+fun Char.isBelongToAzMinus(): Boolean = (this == 'a') ||
         (this == 'b') ||
         (this == 'c') ||
         (this == 'd') ||
