@@ -6,20 +6,20 @@ import java.text.Normalizer
 //@Suppress("ClassName")
 object Data {
 
-    val basics: Array<String> =arrayOf(
-    "foo",
-    "bar",
-    "baz",
-    "qux",
-    "quux",
-    "corge",
-    "grault",
-    "garply",
-    "waldo",
-    "fred",
-    "plugh",
-    "xyzzy",
-    "thud"
+    val basics: Array<String> = arrayOf(
+        "foo",
+        "bar",
+        "baz",
+        "qux",
+        "quux",
+        "corge",
+        "grault",
+        "garply",
+        "waldo",
+        "fred",
+        "plugh",
+        "xyzzy",
+        "thud"
     )
 
     var categories: Array<String> = arrayOf(
@@ -47,6 +47,7 @@ object Data {
         "Swift",
         "iOS"
     )
+
     @JvmStatic
     val intellectuals: Array<String> = arrayOf(
         "Karl Marx",
@@ -96,10 +97,9 @@ object Data {
             )
         }.toTypedArray()
 
-    fun Array<String>.nameToLoginNormalizer(): Array<String> =
-        map {
-            it.lowercase()
-                .replace(' ', '.')
-                .unaccent()
-        }.toTypedArray()
+    fun Array<String>.nameToLoginNormalizer(): Array<String> = map {
+        it.lowercase()
+            .replace(' ', '.')
+            .unaccent()
+    }.toTypedArray()
 }
