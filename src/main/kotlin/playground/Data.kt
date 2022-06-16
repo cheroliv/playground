@@ -3,7 +3,6 @@ package playground
 import org.apache.commons.lang3.StringUtils
 import java.text.Normalizer
 
-//@Suppress("ClassName")
 object Data {
 
     val basics: Array<String> = arrayOf(

@@ -1,10 +1,10 @@
-import org.gradle.api.JavaVersion.VERSION_1_8
+import org.gradle.api.JavaVersion.VERSION_18
 import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.ByteArrayOutputStream
 
 plugins {
-    val kotlinVersion = "1.6.21"
+    val kotlinVersion = "1.7.0"
     java
     groovy
     kotlin("jvm") version (kotlinVersion)
@@ -69,7 +69,7 @@ tasks.withType<Test> {
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions.apply {
-        jvmTarget = VERSION_1_8.toString()
+        jvmTarget = VERSION_18.toString()
         kotlinOptions.freeCompilerArgs += properties["opt_in_kotlin_compiler_option"].toString()
     }
 }

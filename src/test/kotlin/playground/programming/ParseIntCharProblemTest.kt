@@ -12,7 +12,7 @@ class ParseIntCharProblemTest {
     }.toInt()
 
     @Test
-    fun `deviner l'age contenu au debut de la chaine de caractere`(): Unit {
-        assertEquals(52,getAge("52 kkkkkkk"))
+    fun `deviner l'age contenu au debut de la chaine de caractere`() {
+        assertEquals(52, getAge("52 kkkkkkk"))
     }
 }
