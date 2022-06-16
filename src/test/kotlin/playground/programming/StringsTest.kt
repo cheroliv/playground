@@ -2,6 +2,8 @@ package playground.programming
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
+import kotlin.test.assertFalse
 
 class StringsTest {
     @Suppress("NonAsciiCharacters")
@@ -43,9 +45,9 @@ class StringsTest {
 
         //retourne une chaine de caractères contenant,
         //les caractères aux positions x à y-1
-        //sub = t1.substring(x, y)
+        //sub = t.substring(x, y)
 
-        //t1 = "C'est le moment"
+        //t = "C'est le moment"
         //retourne les caractères 6 et 7
         var sub = t.substring(6, 8)
         assertEquals("le", sub)
@@ -83,6 +85,14 @@ class StringsTest {
         @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
         assertEquals("C'EST LE MOMENT", t.toUpperCase())
         assertEquals("C'EST LE MOMENT", t.uppercase())
+
+        //comparaison de chaines de caractères
+        //t = "C'est le moment"
+        asserFalse(t.equals("hello"))
+        asserFalse(t == "hello")
+        assertTrue(t.equalsIgnoreCase("C'EST LE MOMENT"))
+        assertTrue(t.equals("C'EST LE MOMENT", ignoreCase = true))
+
 
 //        println(t.toUpperCase())
     }
