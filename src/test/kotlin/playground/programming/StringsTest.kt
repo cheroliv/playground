@@ -71,6 +71,7 @@ class StringsTest {
 
         //place les 4 premiers caractères de t1
         //dans le tableau ca a la position 2
+        @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
         (t as java.lang.String).getChars(0, 3, ca, 1)
         assertEquals("CC'et le moment", String(ca))
         assertEquals("CC'et le moment", ca.concatToString())
@@ -79,6 +80,7 @@ class StringsTest {
         assertEquals("c'est le moment", t.toLowerCase())
         assertEquals("c'est le moment", t.lowercase())
         //to lower case
+        @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
         assertEquals("C'EST LE MOMENT", t.toUpperCase())
         assertEquals("C'EST LE MOMENT", t.uppercase())
 
