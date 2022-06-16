@@ -60,6 +60,7 @@ class StringsTest {
 
         //extraction des caractères d'une chaine
         @Suppress("ReplaceGetOrSet")
+        assertEquals('e', t1.elementAt(2))
         assertEquals('e', t1.get(2))
         assertEquals('e', t1[2])
 
@@ -67,5 +68,11 @@ class StringsTest {
         val ca = t1.toCharArray()
         assertEquals(t1.length, ca.size)
         t1.mapIndexed { index, char -> assertEquals(char, ca[index]) }
+
+        //place les 4 premiers caractères de t1
+        //dans le tableau ca a la position 2
+        (t1 as java.lang.String).getChars(0, 3, ca, 1)
+        assertEquals("CC'et le moment", String(ca))
+        assertEquals("CC'et le moment", ca.concatToString())
     }
 }
