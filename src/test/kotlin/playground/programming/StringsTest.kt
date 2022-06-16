@@ -39,7 +39,6 @@ class StringsTest {
         assertEquals("C'est le moment.", t3)
 
         //conversion de type
-        @Suppress("ConvertToStringTemplate")
         val t4 = t + " " + 23.4
         assertEquals("C'est le moment. 23.4", t4)
 
@@ -110,8 +109,8 @@ class StringsTest {
         assertTrue(t.endsWith("le moment."))
 
         //compareTo
-        //retourne une valeur < 0 car s est
-        //alphabetiquement avant "N'est"
+        //retourne une valeur < 0, car s est
+        //alphabétiquement avant "N'est"
         val r1: Int = s.compareTo("N'est")
         assertTrue(r1 < 0)
         //variante ignorant la casse
@@ -152,6 +151,5 @@ class StringsTest {
         //"est" n'apparait qu'une seule fois: returne -1
         pos = t.indexOf("est", pos + 1)
         assertEquals(-1, pos)
-        //        println(t.toUpperCase())
     }
 }
