@@ -148,7 +148,7 @@ class StringsTest {
         //retourne 2
         pos = t.indexOf("est")
         assertEquals(2, pos)
-        //"est" n'apparait qu'une seule fois: returne -1
+        //"est" n'apparait qu'une seule fois: retourne -1
         pos = t.indexOf("est", pos + 1)
         assertEquals(-1, pos)
     }
