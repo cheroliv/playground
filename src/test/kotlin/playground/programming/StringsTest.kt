@@ -1,4 +1,4 @@
-package playground.basics
+package playground.programming
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -13,31 +13,31 @@ class StringsTest {
 
         //concaténation
         @Suppress("ConvertToStringTemplate")
-        val t1: String = s + " le moment"
-        assertEquals("C'est le moment", t1)
+        val t: String = s + " le moment"
+        assertEquals("C'est le moment", t)
 
         // StringBuilder
-        val t2: String = s + buildString { append(" le moment") }
-        assertEquals("C'est le moment", t2)
+        val t1: String = s + buildString { append(" le moment") }
+        assertEquals("C'est le moment", t1)
 
         //interpolation
-        val t3 = "$s le moment"
-        assertEquals("C'est le moment", t3)
+        val t2 = "$s le moment"
+        assertEquals("C'est le moment", t2)
 
         //multiligne chaine de caractères
-        val t4 = """$s le moment"""
-        assertEquals("C'est le moment", t4)
+        val t3 = """$s le moment"""
+        assertEquals("C'est le moment", t3)
 
         //conversion de type
         @Suppress("ConvertToStringTemplate")
-        val t5 = t1 + " " + 23.4
-        assertEquals("C'est le moment 23.4", t5)
+        val t4 = t + " " + 23.4
+        assertEquals("C'est le moment 23.4", t4)
 
-        val t6 = 'C'.toString()
-        assertEquals("C", t6)
+        val t5 = 'C'.toString()
+        assertEquals("C", t5)
 
         //taille de la chaine de caractères
-        assertEquals(15, t1.length)
+        assertEquals(15, t.length)
 
         //sous-chaine d'une chaine de caractères
 
@@ -47,11 +47,11 @@ class StringsTest {
 
         //t1 = "C'est le moment"
         //retourne les caractères 6 et 7
-        var sub = t1.substring(6, 8)
+        var sub = t.substring(6, 8)
         assertEquals("le", sub)
 
         //retourne les caractères 0 à 4
-        sub = t1.substring(0, 5)
+        sub = t.substring(0, 5)
         assertEquals("C'est", sub)
 
         //la longueur d'une sous-chaine est toujours égale (y-x)
@@ -60,19 +60,28 @@ class StringsTest {
 
         //extraction des caractères d'une chaine
         @Suppress("ReplaceGetOrSet")
-        assertEquals('e', t1.elementAt(2))
-        assertEquals('e', t1.get(2))
-        assertEquals('e', t1[2])
+        assertEquals('e', t.elementAt(2))
+        assertEquals('e', t.get(2))
+        assertEquals('e', t[2])
 
         //conversion d'une chaine en tableau de caractères
-        val ca = t1.toCharArray()
-        assertEquals(t1.length, ca.size)
-        t1.mapIndexed { index, char -> assertEquals(char, ca[index]) }
+        val ca = t.toCharArray()
+        assertEquals(t.length, ca.size)
+        t.mapIndexed { index, char -> assertEquals(char, ca[index]) }
 
         //place les 4 premiers caractères de t1
         //dans le tableau ca a la position 2
-        (t1 as java.lang.String).getChars(0, 3, ca, 1)
+        (t as java.lang.String).getChars(0, 3, ca, 1)
         assertEquals("CC'et le moment", String(ca))
         assertEquals("CC'et le moment", ca.concatToString())
+
+        //to lower case
+        assertEquals("c'est le moment", t.toLowerCase())
+        assertEquals("c'est le moment", t.lowercase())
+        //to lower case
+        assertEquals("C'EST LE MOMENT", t.toUpperCase())
+        assertEquals("C'EST LE MOMENT", t.uppercase())
+
+        println(t.toUpperCase())
     }
 }
