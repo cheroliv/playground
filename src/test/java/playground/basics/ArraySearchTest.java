@@ -1,18 +1,17 @@
 package playground.basics;
 
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static java.util.Arrays.binarySearch;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArraySearchTest {
 
     static boolean contains(Integer[] ints, int k) {
-        return (Arrays.binarySearch(ints, k)) >= 0;
+        return (binarySearch(ints, k)) >= 0;
     }
 
 
@@ -23,8 +22,8 @@ public class ArraySearchTest {
         assertTrue(contains(ints, k));
 
         //lets play with stream
-        Stream<Integer> integerStream = Arrays.stream(ints);
-        Iterator<Integer> integers = integerStream.iterator();
+        var integerStream = Arrays.stream(ints);
+        var integers = integerStream.iterator();
         while (integers.hasNext()) {
             Integer current = integers.next();
             System.out.print(current + " ");
