@@ -1,4 +1,4 @@
-package playground.basics;
+package playground.programming;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -27,6 +27,7 @@ public class ArraySearchTest {
         while (integers.hasNext()) {
             Integer current = integers.next();
             System.out.print(current + " ");
+            if(current==k)break;
         }
         System.out.println();
     }
