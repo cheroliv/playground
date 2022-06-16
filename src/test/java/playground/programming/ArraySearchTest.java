@@ -1,12 +1,12 @@
 package playground.programming;
 
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static java.util.Arrays.binarySearch;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static java.util.Arrays.binarySearch;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArraySearchTest {
 
@@ -27,7 +27,7 @@ public class ArraySearchTest {
         while (integers.hasNext()) {
             Integer current = integers.next();
             System.out.print(current + " ");
-            if(current==k)break;
+            if (current == k) break;
         }
         System.out.println();
     }
