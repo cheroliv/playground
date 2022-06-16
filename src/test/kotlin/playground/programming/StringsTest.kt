@@ -5,6 +5,7 @@
     "PLATFORM_CLASS_MAPPED_TO_KOTLIN",
     "KotlinConstantConditions",
     "ReplaceCallWithBinaryOperator",
+    "CanBeVal",
 )
 
 package playground.programming
@@ -108,6 +109,49 @@ class StringsTest {
         //se finit par
         assertTrue(t.endsWith("le moment."))
 
-//        println(t.toUpperCase())
+        //compareTo
+        //retourne une valeur < 0 car s est
+        //alphabetiquement avant "N'est"
+        val r1: Int = s.compareTo("N'est")
+        assertTrue(r1 < 0)
+        //variante ignorant la casse
+        val r1Prime: Int = (s as java.lang.String).compareToIgnoreCase("n'est")
+        assertTrue(r1Prime < 0)
+
+        //retourne 0 si les chaines sont equivalente
+        val r2: Int = s.compareTo("C'est")
+        assertEquals(0, r2)
+
+        //retourne une valeur > 0 car s vient apres "B'est"
+        val r3: Int = s.compareTo("B'est")
+        assertTrue(r3 > 0)
+
+        //Recherche de caractères et de sous-chaines de caractères
+
+        //recherche de caractères
+        //position du premier caractères 't'
+        var pos = t.indexOf('t')
+        assertEquals(4, pos)
+        //position du suivant
+        pos = t.indexOf('t', pos + 1)
+        assertEquals(14, pos)
+        //retour d'érreur -1 si absence de suivant
+        pos = t.indexOf('t', pos + 1)
+        assertEquals(-1, pos)
+        //position du dernier 't' dans la chaine: 14
+        pos = t.lastIndexOf('t')
+        assertEquals(14, pos)
+        //recherche de 't' vers l'arrière a partir du caractères 13
+        pos = t.lastIndexOf('t', pos - 1)
+        assertEquals(4, pos)
+
+        //recherche de sous-chaines
+        //retourne 2
+        pos = t.indexOf("est")
+        assertEquals(2, pos)
+        //"est" n'apparait qu'une seule fois: returne -1
+        pos = t.indexOf("est", pos + 1)
+        assertEquals(-1, pos)
+        //        println(t.toUpperCase())
     }
 }
