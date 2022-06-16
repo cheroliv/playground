@@ -84,6 +84,6 @@ class StringsTest {
         assertEquals("C'EST LE MOMENT", t.toUpperCase())
         assertEquals("C'EST LE MOMENT", t.uppercase())
 
-        println(t.toUpperCase())
+//        println(t.toUpperCase())
     }
 }
