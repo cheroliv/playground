@@ -186,9 +186,14 @@ class StringsTest {
         val b = StringBuilder("N'est")
 
         //extrait et définit des caractères individuel du tampon StringBuilder
+        //le caractères à l'index 0
         val c: Char = b.get(0)
         assertEquals('N', c)
-
+        //modifier le premier caractère de la chaine
+        b.setCharAt(0, 'C')
+        assertEquals(s, b.toString())
+        //ajouter des données à un StringBuilder
+        b.append(' ')
 
 
         println(b)
