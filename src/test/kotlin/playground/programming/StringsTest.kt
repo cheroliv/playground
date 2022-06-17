@@ -294,6 +294,7 @@ class StringsTest {
         assertFalse(Character.isLetter(text[1]))
 
         //comparer des chaines de caractères
+        // avec les contrainte la locale système
         val col = Collator.getInstance()
         //le résulat est négatif car chica
         //est avant chico dans l'ordre alphabétique
