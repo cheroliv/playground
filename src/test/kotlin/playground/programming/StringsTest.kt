@@ -89,7 +89,8 @@ class StringsTest {
         //to lower case
         assertEquals("c'est le moment.", t.toLowerCase())
         assertEquals("c'est le moment.", t.lowercase())
-        //to lower case
+
+        //to upper case
         assertEquals("C'EST LE MOMENT.", t.toUpperCase())
         assertEquals("C'EST LE MOMENT.", t.uppercase())
 
@@ -97,6 +98,7 @@ class StringsTest {
         //t = "C'est le moment."
         assertFalse(t.equals("hello"))
         assertFalse(t == "hello")
+
         //ignore la casse
         assertTrue(t.equalsIgnoreCase("C'EST LE MOMENT."))
         assertTrue(t.equals("C'EST LE MOMENT.", ignoreCase = true))
@@ -111,6 +113,7 @@ class StringsTest {
         //alphabétiquement avant "N'est"
         val r1: Int = s.compareTo("N'est")
         assertTrue(r1 < 0)
+
         //variante ignorant la casse
         val r1Prime: Int = (s as java.lang.String).compareToIgnoreCase("n'est")
         assertTrue(r1Prime < 0)
@@ -129,15 +132,19 @@ class StringsTest {
         //position du premier caractères 't'
         var pos = t.indexOf('t')
         assertEquals(4, pos)
+
         //position du suivant
         pos = t.indexOf('t', pos + 1)
         assertEquals(14, pos)
+
         //retour d'érreur -1 si absence de suivant
         pos = t.indexOf('t', pos + 1)
         assertEquals(-1, pos)
+
         //position du dernier 't' dans la chaine: 14
         pos = t.lastIndexOf('t')
         assertEquals(14, pos)
+
         //recherche de 't' vers l'arrière a partir du caractères 13
         pos = t.lastIndexOf('t', pos - 1)
         assertEquals(4, pos)
@@ -146,9 +153,11 @@ class StringsTest {
         //retourne 2
         pos = t.indexOf("est")
         assertEquals(2, pos)
+
         //"est" n'apparait qu'une seule fois: retourne -1
         pos = t.indexOf("est", pos + 1)
         assertEquals(-1, pos)
+
         //recherche d'une sous-chaine depuis l'arrière
         //t = "C'est le moment."
         //retourne 6
@@ -190,33 +199,42 @@ class StringsTest {
         //le caractères à l'index 0
         val c: Char = b.get(0)
         assertEquals('N', c)
+
         //modifier le premier caractère de la chaine
         b.setCharAt(0, 'C')
         assertEquals(s, b.toString())
+
         //ajouter des données à un StringBuilder
         b.append(' ')
         b.append("le moment.")
         b.append(23)
+
         //insère des chaines de caractères ou autre dans le StringBuilder
         b.insert(6, "pas ")
         assertEquals("C'est pas le moment.23", b.toString())
+
         //remplace un sous ensemble de caractères
         //avec une chaine de caractères donnée
         b.replace(2, 9, "est")
         assertEquals("C'est le moment.23", b.toString())
+
         //supprime les caractères
         b.delete(15, 18)
         assertEquals("C'est le moment", b.toString())
         b.deleteCharAt(2)
         assertEquals("C'st le moment", b.toString())
+
         //insert à la postion 2 et décale reste à droite(sans perte de données)
         b.insert(2, 'e')
+
         //tronque la taille de la donnée
         b.setLength(5)
         assertEquals("C'est", b.toString())
+
         //inverse les caractères de la chaine
         b.reverse()
         assertEquals("tse'C", b.toString())
+
         //écrase le StringBuilder, pret à etre réutilisé
         b.setLength(0)
         assertEquals("", b.toString())
@@ -226,14 +244,17 @@ class StringsTest {
         var st = StringTokenizer(t)
         //nb d'items encore présentent dans la file
         assertEquals(3, st.countTokens())
+
         //est ce que il y a encore des items dans la file
         assertTrue(st.hasMoreTokens())
+
         //récupérer le token courrant
         assertEquals("C'est", st.nextToken())
         assertEquals("le", st.nextToken())
         assertEquals("moment.", st.nextToken())
         assertFalse(st.hasMoreTokens())
         assertEquals(0, st.countTokens())
+
         //extraire des occurences de mots délimités
         //par des caractères autres que des expaces.
         val str = "a:b:c:d"
