@@ -181,10 +181,16 @@ class StringsTest {
         assertEquals("C'est", s2)
         assertEquals(s1, s2)
 
-        //StringBuilder pour manipuler les d'une chaine de caractères
+        //StringBuilder pour manipuler les caractères d'une chaine de caractères
+        //crée un tampon StringBuilder à partir d'une chaine de caractères
+        val b = StringBuilder("N'est")
+
+        //extrait et définit des caractères individuel du tampon StringBuilder
+        val c: Char = b.get(0)
+        assertEquals('N', c)
 
 
 
-        println(s1)
+        println(b)
     }
 }
