@@ -194,6 +194,25 @@ class StringsTest {
         assertEquals(s, b.toString())
         //ajouter des données à un StringBuilder
         b.append(' ')
+        b.append("le moment.")
+        b.append(23)
+        //insère des chaines de caractères ou autre dans le StringBuilder
+        b.insert(6, "pas ")
+        assertEquals("C'est pas le moment.23", b.toString())
+        //remplace un sous ensemble de caractères
+        //avec une chaine de caractères donnée
+        b.replace(2, 9, "est")
+        assertEquals("C'est le moment.23", b.toString())
+        //supprime les caractères
+        b.delete(15, 18)
+        assertEquals("C'est le moment", b.toString())
+        b.deleteCharAt(2)
+        assertEquals("C'st le moment", b.toString())
+        //insert à la postion 2 et décale reste à droite(sans perte de données)
+        b.insert(2, 'e')
+        //tronque la taille de la donnée
+        b.setLength(5)
+        assertEquals("C'est", b.toString())
 
 
         println(b)
