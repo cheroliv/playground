@@ -84,6 +84,7 @@ class StringsTest {
             /* dstBegin = */ 1
         )
         assertEquals("CC'et le moment.", String(ca))
+        //colle tous les caractères dans un meme string
         assertEquals("CC'et le moment.", ca.concatToString())
 
         //to lower case
@@ -268,5 +269,30 @@ class StringsTest {
         assertFalse(st.hasMoreTokens())
         assertEquals(0, st.countTokens())
 
+
+        //text="C'est le moment."
+        val text = t.toCharArray()
+        var p = 0
+
+        //sauter les espaces de tete
+        //pour ramener p à la position du premier caractère imprimable
+        while ((p < text.size) &&
+            (Character.isWhitespace(text[p]))
+        ) p++
+        assertEquals(0, p)
+        assertEquals("C'est le moment.", text.concatToString())
+
+        //met le premier mot du texte en majuscule
+        while (p < text.size && Character.isLetter(text[p])) {
+            text[p] = Character.toUpperCase(text[p])
+            p++
+        }
+        assertEquals(1,p)
+        assertEquals('C',text[0])
+        assertTrue(Character.isUpperCase(text[0]))
+        assertFalse(Character.isLetter(text[1]))
+
+        println(text)
+        println(p)
     }
 }
