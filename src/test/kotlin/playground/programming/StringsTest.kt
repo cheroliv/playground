@@ -10,10 +10,7 @@
 
 package playground.programming
 
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class StringsTest {
     @Test
@@ -162,8 +159,18 @@ class StringsTest {
         val noun = t.substring(pos + 3)
         assertEquals(-1, noun.indexOf("le "))
 
-        //
+        //remplacement de toutes les instances d'un caractère
+        //par un autre caractère
+        //ne fonctionne que avec les caractères, pas les chaines
+        val exclaim: String = t.replace('.', '!')
+        assertEquals('!', exclaim.get(exclaim.length - 1))
+        assertEquals(exclaim.length - 1, exclaim.indexOf('!'))
+        assertEquals(-1, exclaim.indexOf('.'))
 
-//        assertEquals("le", noun)
+        //suppression des espaces blancs
+        //au début et à la fin d'une chaine
+        val noextraspaces = t.trim()
+        assertNotEquals(' ', noextraspaces.get(0))
+        assertNotEquals(' ', noextraspaces.get(noextraspaces.length - 1))
     }
 }
