@@ -10,6 +10,7 @@
 
 package playground.programming
 
+import java.text.Collator
 import java.util.*
 import kotlin.test.*
 
@@ -287,12 +288,15 @@ class StringsTest {
             text[p] = Character.toUpperCase(text[p])
             p++
         }
-        assertEquals(1,p)
-        assertEquals('C',text[0])
+        assertEquals(1, p)
+        assertEquals('C', text[0])
         assertTrue(Character.isUpperCase(text[0]))
         assertFalse(Character.isLetter(text[1]))
 
-        println(text)
-        println(p)
+        //comparer des chaines de caractères
+        val col = Collator.getInstance()
+        //le résulat est négatif car chica
+        //est avant chico dans l'ordre alphabétique
+        assertTrue(col.compare("chica", "chico") < 0)
     }
 }
