@@ -172,5 +172,19 @@ class StringsTest {
         val noextraspaces = t.trim()
         assertNotEquals(' ', noextraspaces.get(0))
         assertNotEquals(' ', noextraspaces.get(noextraspaces.length - 1))
+
+        //extraction des instances uniques de chaines de caractères
+        //avec intern()
+        val s1 = s.intern()
+        assertEquals(s, s1)
+        val s2 = "C'est".intern()
+        assertEquals("C'est", s2)
+        assertEquals(s1, s2)
+
+        //StringBuilder pour manipuler les d'une chaine de caractères
+
+
+
+        println(s1)
     }
 }
