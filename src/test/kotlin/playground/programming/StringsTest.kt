@@ -151,5 +151,19 @@ class StringsTest {
         //"est" n'apparait qu'une seule fois: retourne -1
         pos = t.indexOf("est", pos + 1)
         assertEquals(-1, pos)
+        //recherche d'une sous-chaine depuis l'arrière
+        //t = "C'est le moment."
+        //retourne 6
+        pos = t.lastIndexOf("le ")
+        assertEquals(6, pos)
+
+        //extrait depuis la position 9,
+        //renvoi toute la chaine après "le "
+        val noun = t.substring(pos + 3)
+        assertEquals(-1, noun.indexOf("le "))
+
+        //
+
+//        assertEquals("le", noun)
     }
 }
