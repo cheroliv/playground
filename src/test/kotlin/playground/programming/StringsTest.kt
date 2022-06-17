@@ -10,6 +10,7 @@
 
 package playground.programming
 
+import java.util.*
 import kotlin.test.*
 
 class StringsTest {
@@ -213,8 +214,25 @@ class StringsTest {
         //tronque la taille de la donnée
         b.setLength(5)
         assertEquals("C'est", b.toString())
+        //inverse les caractères de la chaine
+        b.reverse()
+        assertEquals("tse'C", b.toString())
+        //écrase le StringBuilder, pret à etre réutilisé
+        b.setLength(0)
+        assertEquals("", b.toString())
 
-
-        println(b)
+        //java.util.StringTokenizer pour fragmenter une chaine
+        //de caractères en un ensemble de mots
+        val st = StringTokenizer(t)
+        //nb d'items encore présentent dans la file
+        assertEquals(3, st.countTokens())
+        //est ce que il y a encore des items dans la file
+        assertTrue(st.hasMoreTokens())
+        //récupérer le token courrant
+        assertEquals("C'est", st.nextToken())
+        assertEquals("le", st.nextToken())
+        assertEquals("moment.", st.nextToken())
+        assertFalse(st.hasMoreTokens())
+        assertEquals(0, st.countTokens())
     }
 }
