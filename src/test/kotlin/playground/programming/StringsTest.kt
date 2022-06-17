@@ -223,7 +223,7 @@ class StringsTest {
 
         //java.util.StringTokenizer pour fragmenter une chaine
         //de caractères en un ensemble de mots
-        val st = StringTokenizer(t)
+        var st = StringTokenizer(t)
         //nb d'items encore présentent dans la file
         assertEquals(3, st.countTokens())
         //est ce que il y a encore des items dans la file
@@ -234,5 +234,18 @@ class StringsTest {
         assertEquals("moment.", st.nextToken())
         assertFalse(st.hasMoreTokens())
         assertEquals(0, st.countTokens())
+        //extraire des occurences de mots délimités
+        //par des caractères autres que des expaces.
+        val str = "a:b:c:d"
+        st = StringTokenizer(str, ":")
+        assertEquals(4, st.countTokens())
+        assertTrue(st.hasMoreTokens())
+        assertEquals("a", st.nextToken())
+        assertEquals("b", st.nextToken())
+        assertEquals("c", st.nextToken())
+        assertEquals("d", st.nextToken())
+        assertFalse(st.hasMoreTokens())
+        assertEquals(0, st.countTokens())
+
     }
 }
