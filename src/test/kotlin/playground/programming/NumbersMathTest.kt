@@ -34,7 +34,7 @@ class NumbersMathTest {
         var i: Int = java.lang.Integer.parseInt(s)
         val l: Long = java.lang.Long.parseLong(s)
         val f: Float = java.lang.Float.parseFloat(s)
-        val d: Double = java.lang.Double.parseDouble(s)
+        var d: Double = java.lang.Double.parseDouble(s)
 
         //valeur exacte
         val f_exac = java.lang.Float.valueOf(s)
@@ -98,6 +98,26 @@ class NumbersMathTest {
         //les valeurs monétaires sont parfois formaté
         // d'une maniere differente des nombres
         val money_format = NumberFormat.getCurrencyInstance(Locale.FRANCE)
-        assertNotEquals("1234.56",money_format.format(1234.56))
+        assertNotEquals("1234.56", money_format.format(1234.56))
+
+        //java.lang.Math
+        d = Math.toRadians(27.0)
+        d = Math.cos(d)
+        d = Math.sqrt(d)
+        d = Math.log(d)
+        d = Math.exp(d)
+        d = Math.pow(10.0, d)
+        d = Math.atan(d)
+        d = Math.toDegrees(d)
+        //arrondi au dessus
+        val up = Math.ceil(d)
+        //arrondi au dessous
+        val down = Math.floor(d)
+        //arrondi au plus près
+        val nearest = Math.round(d)
+
+        //java.lang.Math.Random()
+
+
     }
 }
