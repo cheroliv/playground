@@ -182,6 +182,10 @@ class NumbersMathTest {
         //java.security.SecureRandom pour les nombres aléatoires
         //utilisé en cryptographie
         val secure_generator = SecureRandom()
-
+        //le générateur génère sa propre tete de liste sur 16 octets
+        secure_generator.setSeed(secure_generator.generateSeed(16))
+        val sec_b_arr = ByteArray(128)
+        secure_generator.nextBytes(sec_b_arr)
+        sec_b_arr.iterator().forEachRemaining(::println)
     }
 }
