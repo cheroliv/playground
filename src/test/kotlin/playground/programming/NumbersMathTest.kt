@@ -25,7 +25,7 @@ class NumbersMathTest {
         //vers un nombre, si possible.
         var b: Byte = java.lang.Byte.parseByte(s)
         var sh: Short = java.lang.Short.parseShort(s)
-        val i: Int = java.lang.Integer.parseInt(s)
+        var i: Int = java.lang.Integer.parseInt(s)
         val l: Long = java.lang.Long.parseLong(s)
         val f: Float = java.lang.Float.parseFloat(s)
         val d: Double = java.lang.Double.parseDouble(s)
@@ -44,9 +44,9 @@ class NumbersMathTest {
         assertEquals(255, sh)
 
         //la méthode valueOf() peut gérer des bases arbitraires.
-
+        i = java.lang.Integer.valueOf("egg", 17).toInt()
         println(b)
         println(sh)
-
+        println(i)
     }
 }
