@@ -3,12 +3,15 @@
     "LocalVariableName",
     "VARIABLE_WITH_REDUNDANT_INITIALIZER",
     "RemoveRedundantQualifierName",
+    "ReplaceJavaStaticMethodWithKotlinAnalog",
 )
 
 package playground.programming
 
+import java.text.NumberFormat
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 
 class NumbersMathTest {
     @Test
@@ -49,9 +52,45 @@ class NumbersMathTest {
         i = java.lang.Integer.valueOf("egg", 17).toInt()
         assertEquals(4334, i)
 
-        //la méthode decode()
-        println(b)
-        println(sh)
-        println(i)
+        //la méthode decode() gére les representations octale,
+        //décimal, hexadécimal, en fonction du préfixe numérique
+        //de la chaine de caractères
+        //un 0 de tete signifie base 8
+        //un 0x de tete signifie base 16
+        //les autres sont en base 10
+        val sho = java.lang.Short.decode("0377")
+
+        //la classe Integer peut convertir les nombres
+        //en diverses chaines de caractères.
+        val decimal = java.lang.Integer.toString(42)
+        assertEquals("42", decimal)
+
+        val decimal_ = 42.toString()
+        assertEquals("42", decimal_)
+
+        val binary = java.lang.Integer.toBinaryString(42)
+        assertEquals("101010", binary)
+
+        val octal = java.lang.Integer.toOctalString(42)
+        assertEquals("52", octal)
+
+        val hex = java.lang.Integer.toHexString(42)
+        assertEquals("2a", hex)
+
+        val base36 = java.lang.Integer.toString(42, 36)
+        assertEquals("16", base36)
+
+        val base36_ = 42.toString(36)
+        assertEquals("16", base36_)
+
+        //java.text.NumberFormat effectue la conversion
+        // d'une maniere spécifique aux parametres locaux
+        val nf = NumberFormat.getNumberInstance()
+        val formatted_number = nf.format(9876543.21)
+        assertNotEquals("9876543.21", formatted_number)
+
+        //parse la chaine de caractères en fonction des parametres locaux(fr)
+        val n = nf.parse("1234567,89")
+        assertEquals(1234567.89, n)
     }
 }
