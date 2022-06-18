@@ -163,5 +163,15 @@ class NumbersMathTest {
                     Math.abs(d) < 1.0
         )
 
+        //randoms bytes
+        //rempli un tableau avec des valeurs byte aléatoires
+        val b_arr = ByteArray(128)
+        generator.nextBytes(b_arr)
+        b_arr.iterator().forEachRemaining {
+            assertTrue(
+                it > Byte.MAX_VALUE &&
+                        it > Byte.MIN_VALUE
+            )
+        }
     }
 }
