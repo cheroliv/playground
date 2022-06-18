@@ -1,6 +1,8 @@
 @file:Suppress(
     "UNUSED_VARIABLE",
-    "LocalVariableName"
+    "LocalVariableName",
+    "VARIABLE_WITH_REDUNDANT_INITIALIZER",
+    "RemoveRedundantQualifierName",
 )
 
 package playground.programming
@@ -45,6 +47,9 @@ class NumbersMathTest {
 
         //la méthode valueOf() peut gérer des bases arbitraires.
         i = java.lang.Integer.valueOf("egg", 17).toInt()
+        assertEquals(4334, i)
+
+        //la méthode decode()
         println(b)
         println(sh)
         println(i)
