@@ -10,10 +10,7 @@ package playground.programming
 
 import java.text.NumberFormat
 import java.util.*
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class NumbersMathTest {
     @Test
@@ -128,6 +125,31 @@ class NumbersMathTest {
         d = generator.nextDouble()
         assertTrue(d >= 0.0 && d < 1.0)
 
+
+        f = generator.nextFloat()
+//        assertTrue(f >= 0.0 && f < 1.0)
+
+
+        l = generator.nextLong()
+//        assertTrue(l >= 0.0 && l < 1.0)
+
+
+        i = generator.nextInt()
+//        assertTrue(i >= 0.0 && i < 1.0)
+
+        val limit = 100
+        //la limit max du ramdom est poussé a limit
+        //et la limit min reste la meme
+        i = generator.nextInt(limit)
+//        assertTrue(i >= 0.0 && i < limit)
+
+
+        val bool = generator.nextBoolean()
+//        assertNotNull(bool)
+
+
+        d = generator.nextGaussian()
+//        assertTrue(d >= 0.0 && d < 1.0)
 
     }
 }
