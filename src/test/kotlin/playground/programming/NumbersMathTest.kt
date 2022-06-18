@@ -1,3 +1,8 @@
+@file:Suppress(
+    "UNUSED_VARIABLE",
+    "LocalVariableName"
+)
+
 package playground.programming
 
 import kotlin.test.Test
