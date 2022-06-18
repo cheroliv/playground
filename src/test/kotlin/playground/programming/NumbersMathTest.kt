@@ -97,7 +97,7 @@ class NumbersMathTest {
 
         //les valeurs monétaires sont parfois formaté
         // d'une maniere differente des nombres
-        val money_format=NumberFormat.getCurrencyInstance(Locale.FRANCE)
-        println(money_format.format(1234.56))
+        val money_format = NumberFormat.getCurrencyInstance(Locale.FRANCE)
+        assertNotEquals("1234.56",money_format.format(1234.56))
     }
 }
