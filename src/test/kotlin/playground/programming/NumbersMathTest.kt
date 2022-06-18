@@ -172,7 +172,6 @@ class NumbersMathTest {
                 it < Byte.MAX_VALUE &&
                         it > Byte.MIN_VALUE
             )
-            print("$it ")
         }
     }
 }
