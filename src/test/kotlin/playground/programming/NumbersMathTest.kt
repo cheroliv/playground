@@ -127,29 +127,41 @@ class NumbersMathTest {
 
 
         f = generator.nextFloat()
-//        assertTrue(f >= 0.0 && f < 1.0)
+        assertTrue(f >= 0.0 && f < 1.0)
 
 
         l = generator.nextLong()
-//        assertTrue(l >= 0.0 && l < 1.0)
+        assertTrue(
+            Math.abs(l) < Long.MAX_VALUE &&
+                    Math.abs(l) >= 0
+        )
 
 
         i = generator.nextInt()
-//        assertTrue(i >= 0.0 && i < 1.0)
+        assertTrue(
+            Math.abs(i) < java.lang.Integer.MAX_VALUE &&
+                    Math.abs(i) >= 0
+        )
 
         val limit = 100
         //la limit max du ramdom est poussé a limit
         //et la limit min reste la meme
         i = generator.nextInt(limit)
-//        assertTrue(i >= 0.0 && i < limit)
+        assertTrue(
+            Math.abs(i) < limit &&
+                    Math.abs(i) >= 0.0
+        )
 
 
         val bool = generator.nextBoolean()
-//        assertNotNull(bool)
+        assertNotNull(bool)
 
 
         d = generator.nextGaussian()
-//        assertTrue(d >= 0.0 && d < 1.0)
+        assertTrue(
+            Math.abs(d) >= 0.0 &&
+                    Math.abs(d) < 1.0
+        )
 
     }
 }
