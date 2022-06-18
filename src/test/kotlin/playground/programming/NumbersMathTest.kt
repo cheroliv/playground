@@ -186,6 +186,14 @@ class NumbersMathTest {
         secure_generator.setSeed(secure_generator.generateSeed(16))
         val sec_b_arr = ByteArray(128)
         secure_generator.nextBytes(sec_b_arr)
-        sec_b_arr.iterator().forEachRemaining(::println)
+        sec_b_arr.iterator().forEachRemaining {
+            kotlin.test.assertTrue(
+                it <= kotlin.Byte.MAX_VALUE &&
+                        it >= kotlin.Byte.MIN_VALUE
+            )
+        }
+
+        sec_b_arr.iterator().forEachRemaining { println("$it ") }
+
     }
 }
