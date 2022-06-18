@@ -13,6 +13,7 @@ import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import kotlin.test.assertTrue
 
 class NumbersMathTest {
     @Test
@@ -117,7 +118,13 @@ class NumbersMathTest {
         val nearest = Math.round(d)
 
         //java.lang.Math.Random()
+        val r = Math.random()
+        assertTrue(r >= 0.0)
+        assertTrue(r < 1.0)
 
+        //créé un nouvel objet Random, en l'initialisant
+        //avec l'heure courante
+        val generator = java.util.Random(System.currentTimeMillis())
 
     }
 }
