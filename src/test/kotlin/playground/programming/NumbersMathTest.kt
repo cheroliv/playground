@@ -155,6 +155,7 @@ class NumbersMathTest {
         assertTrue(i in 0 until limit)
 
 
+        //prochaine valeur aléatoire de taille booléen
         val bool = generator.nextBoolean()
         assertNotNull(bool)
 
@@ -165,12 +166,6 @@ class NumbersMathTest {
             Math.abs(d) >= 0.0 &&
                     Math.abs(d) < 1.0
         )
-
-        assertTrue(
-            Math.abs(d) >= 0.0 &&
-                    Math.abs(d) < 1.0
-        )
-
 
         //randoms bytes
         //rempli un tableau avec des valeurs byte aléatoires
