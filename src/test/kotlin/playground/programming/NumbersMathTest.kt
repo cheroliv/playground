@@ -201,5 +201,7 @@ class NumbersMathTest {
         (2..1000).forEach {
             total = total.multiply(BigInteger.valueOf(it.toLong()))
         }
+        assertTrue(total.toString().length > 1024)
+        println(total)
     }
 }
