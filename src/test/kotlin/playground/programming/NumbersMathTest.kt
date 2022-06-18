@@ -169,9 +169,10 @@ class NumbersMathTest {
         generator.nextBytes(b_arr)
         b_arr.iterator().forEachRemaining {
             assertTrue(
-                it > Byte.MAX_VALUE &&
+                it < Byte.MAX_VALUE &&
                         it > Byte.MIN_VALUE
             )
+            print("$it ")
         }
     }
 }
