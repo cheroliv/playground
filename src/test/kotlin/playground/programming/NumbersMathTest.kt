@@ -196,8 +196,10 @@ class NumbersMathTest {
 
         //java.math.BigDecimal java.math.BigInteger
         //pour travailler sur des grandes valeurs.
-        //calcule la factorielle de 1000
+        //calcule de la factorielle de 1000
         var total = BigInteger.valueOf(1)
-        (2..1000).forEach { total = total.multiply(BigInteger.valueOf(it.toLong())) }
+        (2..1000).forEach {
+            total = total.multiply(BigInteger.valueOf(it.toLong()))
+        }
     }
 }
