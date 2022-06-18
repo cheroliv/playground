@@ -119,16 +119,14 @@ class NumbersMathTest {
 
         //java.lang.Math.Random()
         val r = Math.random()
-        assertTrue(r >= 0.0)
-        assertTrue(r < 1.0)
+        assertTrue(r >= 0.0 && r < 1.0)
 
         //créé un nouvel objet Random, en l'initialisant
         //avec l'heure courante
         val generator = java.util.Random(System.currentTimeMillis())
 
         d = generator.nextDouble()
-        assertTrue(d >= 0.0)
-        assertTrue(d < 1.0)
+        assertTrue(d >= 0.0 && d < 1.0)
 
 
     }
