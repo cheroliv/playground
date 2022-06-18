@@ -9,6 +9,7 @@
 package playground.programming
 
 import java.text.NumberFormat
+import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
@@ -85,12 +86,18 @@ class NumbersMathTest {
 
         //java.text.NumberFormat effectue la conversion
         // d'une maniere spécifique aux parametres locaux
-        val nf = NumberFormat.getNumberInstance()
+        //sans parametre prend la local systeme comme reference
+        val nf = NumberFormat.getNumberInstance(Locale.FRANCE)
         val formatted_number = nf.format(9876543.21)
         assertNotEquals("9876543.21", formatted_number)
 
         //parse la chaine de caractères en fonction des parametres locaux(fr)
         val n = nf.parse("1234567,89")
         assertEquals(1234567.89, n)
+
+        //les valeurs monétaires sont parfois formaté
+        // d'une maniere differente des nombres
+        val money_format=NumberFormat.getCurrencyInstance(Locale.FRANCE)
+        println(money_format.format(1234.56))
     }
 }
