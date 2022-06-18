@@ -33,8 +33,8 @@ class NumbersMathTest {
         var b: Byte = java.lang.Byte.parseByte(s)
         var sh: Short = java.lang.Short.parseShort(s)
         var i: Int = java.lang.Integer.parseInt(s)
-        val l: Long = java.lang.Long.parseLong(s)
-        val f: Float = java.lang.Float.parseFloat(s)
+        var l: Long = java.lang.Long.parseLong(s)
+        var f: Float = java.lang.Float.parseFloat(s)
         var d: Double = java.lang.Double.parseDouble(s)
 
         //valeur exacte
@@ -125,6 +125,11 @@ class NumbersMathTest {
         //créé un nouvel objet Random, en l'initialisant
         //avec l'heure courante
         val generator = java.util.Random(System.currentTimeMillis())
+
+        d = generator.nextDouble()
+        assertTrue(d >= 0.0)
+        assertTrue(d < 1.0)
+
 
     }
 }
