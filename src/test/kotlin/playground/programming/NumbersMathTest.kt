@@ -122,46 +122,55 @@ class NumbersMathTest {
         //avec l'heure courante
         val generator = java.util.Random(System.currentTimeMillis())
 
+        //prochaine valeur aléatoire de taille double
         d = generator.nextDouble()
-        assertTrue(d >= 0.0 && d < 1.0)
+        assertTrue((d >= 0.0) && (d < 1.0))
 
 
+        //prochaine valeur aléatoire de taille float
         f = generator.nextFloat()
-        assertTrue(f >= 0.0 && f < 1.0)
+        assertTrue((f >= 0.0) && (f < 1.0))
 
 
+        //prochaine valeur aléatoire de taille long
         l = generator.nextLong()
         assertTrue(
-            Math.abs(l) < Long.MAX_VALUE &&
-                    Math.abs(l) >= 0
+            (Math.abs(l) <= Long.MAX_VALUE) &&
+                    (Math.abs(l) >= 0)
         )
 
 
+        //prochaine valeur aléatoire de taille int
         i = generator.nextInt()
         assertTrue(
-            Math.abs(i) < java.lang.Integer.MAX_VALUE &&
-                    Math.abs(i) >= 0
+            (Math.abs(i) <= java.lang.Integer.MAX_VALUE) &&
+                    (Math.abs(i) >= 0)
         )
 
         val limit = 100
-        //la limit max du ramdom est poussé a limit
-        //et la limit min reste la meme
+        //prochaine valeur aléatoire de taille int
+        //la limit max du ramdom est ramené à limit
+        //et la limit min est 0
         i = generator.nextInt(limit)
-        assertTrue(
-            Math.abs(i) < limit &&
-                    Math.abs(i) >= 0.0
-        )
+        assertTrue(i in 0 until limit)
 
 
         val bool = generator.nextBoolean()
         assertNotNull(bool)
 
 
+        //valeur moyenne 0.0, déviation standard 1.0
         d = generator.nextGaussian()
         assertTrue(
             Math.abs(d) >= 0.0 &&
                     Math.abs(d) < 1.0
         )
+
+        assertTrue(
+            Math.abs(d) >= 0.0 &&
+                    Math.abs(d) < 1.0
+        )
+
 
         //randoms bytes
         //rempli un tableau avec des valeurs byte aléatoires
@@ -169,9 +178,10 @@ class NumbersMathTest {
         generator.nextBytes(b_arr)
         b_arr.iterator().forEachRemaining {
             assertTrue(
-                it < Byte.MAX_VALUE &&
-                        it > Byte.MIN_VALUE
+                it <= Byte.MAX_VALUE &&
+                        it >= Byte.MIN_VALUE
             )
+            print("$it ")
         }
     }
 }
