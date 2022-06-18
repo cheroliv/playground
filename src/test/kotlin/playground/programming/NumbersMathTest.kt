@@ -8,6 +8,7 @@
 
 package playground.programming
 
+import java.math.BigInteger
 import java.security.SecureRandom
 import java.text.NumberFormat
 import java.util.*
@@ -193,7 +194,17 @@ class NumbersMathTest {
             )
         }
 
-        sec_b_arr.iterator().forEachRemaining { System.out.print("$it ") }
+//        sec_b_arr.iterator().forEachRemaining { System.out.print("$it ") }
+
+        //java.math.BigDecimal java.math.BigInteger
+        //pour travailler sur des grandes valeurs.
+        //calcule la factorielle de 1000
+        var total=BigInteger.valueOf(1)
+        for(var i in 1000){
+            total=total.multiply(BigInteger.valueOf(it.toLong()))
+        }
+        println(total)
+
 
     }
 }
