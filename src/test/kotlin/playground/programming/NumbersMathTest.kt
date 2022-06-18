@@ -8,6 +8,7 @@
 
 package playground.programming
 
+import java.security.SecureRandom
 import java.text.NumberFormat
 import java.util.*
 import kotlin.test.*
@@ -176,7 +177,11 @@ class NumbersMathTest {
                 it <= Byte.MAX_VALUE &&
                         it >= Byte.MIN_VALUE
             )
-            print("$it ")
         }
+
+        //java.security.SecureRandom pour les nombres aléatoires
+        //utilisé en cryptographie
+        val secure_generator = SecureRandom()
+
     }
 }
