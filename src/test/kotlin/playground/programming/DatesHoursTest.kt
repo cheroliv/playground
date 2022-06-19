@@ -28,10 +28,12 @@ class DatesHoursTest {
         //java.text.DateFormat
         //affiche la date d'aujourd'hui en utilisant le format
         //par défaut des parametres locaux
+        val defaultDateFormat = DateFormat.getDateInstance()
+        //personnalisation du formattage et de la locale
         val dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Locale.FRANCE)
         val localeFormattedDate = dateFormat.format(Date())
 
-        //constantes pour les styles de pattern de mise en forme
+        //constantes pour les styles de pattern de formattage
         assertEquals(0,DateFormat.FULL)
         assertEquals(1,DateFormat.LONG)
         assertEquals(2,DateFormat.MEDIUM)
