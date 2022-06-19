@@ -34,11 +34,12 @@ class DatesHoursTest {
         val localeFormattedDate = dateFormat.format(Date())
 
         //constantes pour les styles de pattern de formattage
-        assertEquals(0,DateFormat.FULL)
-        assertEquals(1,DateFormat.LONG)
-        assertEquals(2,DateFormat.MEDIUM)
-        assertEquals(3,DateFormat.SHORT)
-        assertEquals(2,DateFormat.DEFAULT)
+        assertEquals(0, DateFormat.FULL)
+        assertEquals(1, DateFormat.LONG)
+        assertEquals(2, DateFormat.MEDIUM)
+        assertEquals(3, DateFormat.SHORT)
+        assertEquals(2, DateFormat.DEFAULT)
+
 
 //        println(dateFormat.format(Date(2019,5,7)))
     }
