@@ -98,7 +98,7 @@ class NumbersMathTest {
         //les valeurs monétaires sont parfois formaté
         // d'une maniere differente des nombres
         val money_format = NumberFormat.getCurrencyInstance(Locale.FRANCE)
-        assertNotEquals("1234.56", money_format.format(1234.56))
+        assertEquals("123,40 €", money_format.format(1234.56))
 
         //java.lang.Math
         d = Math.toRadians(27.0)
