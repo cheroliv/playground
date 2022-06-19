@@ -164,10 +164,7 @@ class NumbersMathTest {
 
         //valeur moyenne 0.0, déviation standard 1.0
         d = generator.nextGaussian()
-        assertTrue(
-            Math.abs(d) >= 0.0 &&
-                    Math.abs(d) < 1
-        )
+
 
         //randoms bytes
         //rempli un tableau avec des valeurs byte aléatoires
@@ -201,7 +198,7 @@ class NumbersMathTest {
         (2..1000).forEach {
             total = total.multiply(BigInteger.valueOf(it.toLong()))
         }
-        assertTrue(total.toString().length > 1024)
-        println(total)
+        assertTrue(total.toString().length == 2568)
     }
+
 }
