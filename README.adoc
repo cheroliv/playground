@@ -1,4 +1,4 @@
 = Playground
 
 **Kézako?** +
-Mon _playground_ de codes unitaires, dans un build gradle.
+Mon _playground_ de codes unitaires, et morceaux de codex aide memoire dans un build gradle.
