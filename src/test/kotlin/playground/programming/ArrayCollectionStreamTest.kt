@@ -39,6 +39,9 @@ class ArrayCollectionStreamTest {
         //Arrays.equals() compare tous les éléments de deux tableaux
         //Arrays.clone() copie tous les elements du tableau dans un autre
         strarray.forEachIndexed { i, it -> assertEquals(it, strarray.clone()[i]) }
+
+        //Arrays.fill() initialise tous les éléments des deux tableaux
+        val data = ByteArray(100)
     }
 
     @Test
