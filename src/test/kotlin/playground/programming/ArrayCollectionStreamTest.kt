@@ -10,6 +10,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.Instant
 import java.util.*
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -24,12 +25,12 @@ class ArrayCollectionStreamTest {
     }
 
     @Test
-    @Ignored
+    @Ignore
     fun `Collections`() {
     }
 
     @Test
-    @Ignored
+    @Ignore
     fun `Stream`() {
     }
 }
