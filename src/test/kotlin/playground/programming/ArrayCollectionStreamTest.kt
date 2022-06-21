@@ -50,7 +50,8 @@ class ArrayCollectionStreamTest {
         //attribue aux éléments 5, 6, 7, 8 et 9 la valeur -2
         Arrays.fill(data, 5, 10, -2)
         ((5 until (10 - 1))).forEach { assertEquals(-2, data[it]) }
-        //recupere le type de data
+
+        //récupère le type de data
         val type = data::class.java
         //est ce que data est un tableau?
         assertTrue(type.isArray())
@@ -58,5 +59,6 @@ class ArrayCollectionStreamTest {
         assertEquals(Byte::class.java, type.getComponentType())
 
         //Collection
+
     }
 }
