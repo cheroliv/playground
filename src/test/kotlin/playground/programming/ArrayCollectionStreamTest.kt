@@ -9,6 +9,7 @@ package playground.programming
 import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class ArrayCollectionStreamTest {
@@ -59,6 +60,25 @@ class ArrayCollectionStreamTest {
         assertEquals(Byte::class.java, type.getComponentType())
 
         //Collection
+        val s = java.util.HashSet<String>()
+        s.add("test")
+        assertTrue(s.contains("test"))
+        assertFalse(s.contains("test2"))
+        s.remove("test")
+        assertFalse(s.contains("test"))
+
+        val ss = TreeSet<String>()
+        ss.add("b")
+        ss.add("a")
+        ss.iterator().forEach { assertTrue(it == "a" || it == "b") }
+
+        //liste doublement chainée
+        var dll: List<String> = LinkedList<String>()
+
+        //plus efficace
+        val l = ArrayList<String>()
+        l.addAll(ss)
+        l.addAll(1, ss)
 
     }
 }
