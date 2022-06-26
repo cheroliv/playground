@@ -105,10 +105,24 @@ class ArrayCollectionStreamTest {
         m.put("clé", Integer(42))
         m["clé"] = Integer(42)
         val value: Integer = m.get("clé")!!
-        assertEquals(Integer(42),value)
+        assertEquals(Integer(42), value)
         m.remove("clé")
         assertTrue(m.isEmpty())
         val keys = m.keys
         assertTrue(keys.isEmpty())
+
+
+        val set = HashSet<String>()
+        set.add("key_1")
+        set.add("key_2")
+        set.add("key_3")
+        val members = set.toArray()
+        assertEquals(3, members.size)
+        val list = ArrayList<String>()
+        list.add("items1")
+        list.add("items2")
+        list.add("items3")
+        val items = list.toArray()
+        assertEquals(3, items.size)
     }
 }
