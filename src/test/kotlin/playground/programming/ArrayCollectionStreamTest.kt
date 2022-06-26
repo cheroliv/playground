@@ -1,7 +1,7 @@
 @file:Suppress(
     "RemoveRedundantQualifierName",
     "UsePropertyAccessSyntax",
-    "UNUSED_VARIABLE", "LocalVariableName",
+    "UNUSED_VARIABLE", "LocalVariableName", "ReplaceGetOrSet",
 )
 
 package playground.programming
@@ -80,5 +80,8 @@ class ArrayCollectionStreamTest {
         l.addAll(ss)
         l.addAll(1, ss)
 
+        val obj = l.get(1)
+        val obj_prime = l[1]
+        assertEquals(obj, obj_prime)
     }
 }
