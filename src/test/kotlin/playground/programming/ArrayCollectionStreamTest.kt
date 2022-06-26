@@ -1,8 +1,9 @@
-@file:Suppress(
-    "RemoveRedundantQualifierName",
-    "UsePropertyAccessSyntax",
-    "UNUSED_VARIABLE", "LocalVariableName", "ReplaceGetOrSet",
-)
+//@file:Suppress(
+//    "RemoveRedundantQualifierName",
+//    "UsePropertyAccessSyntax",
+//    "UNUSED_VARIABLE", "LocalVariableName", "ReplaceGetOrSet",
+//    "ReplaceNegatedIsEmptyWithIsNotEmpty",
+//)
 
 package playground.programming
 
@@ -89,6 +90,9 @@ class ArrayCollectionStreamTest {
         l.add(0,"test2")
         l.removeAt(1)
         l.remove("a")
+        l.removeAll(ss)
+        assertFalse(!l.isEmpty())
+        assertTrue(l.isNotEmpty())
 
     }
 }
