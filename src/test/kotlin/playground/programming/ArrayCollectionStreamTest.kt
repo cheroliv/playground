@@ -85,14 +85,30 @@ class ArrayCollectionStreamTest {
         val obj_prime = l[1]
         assertEquals(obj, obj_prime)
 
-        l.set(3,"nouvel élément")
+        l.set(3, "nouvel élément")
         l.add("test")
-        l.add(0,"test2")
+        l.add(0, "test2")
         l.removeAt(1)
         l.remove("a")
+        assertFalse(l.contains("a"))
         l.removeAll(ss)
-        assertFalse(!l.isEmpty())
+        assertFalse(l.containsAll(ss))
+        assertFalse(l.isEmpty())
         assertTrue(l.isNotEmpty())
 
+
+        val sublist = l.subList(1, 3)
+        val elements = l.toArray()
+        l.clear()
+
+        val m = HashMap<String, Integer>()
+        m.put("clé", Integer(42))
+        m["clé"] = Integer(42)
+        val value: Integer = m.get("clé")!!
+        assertEquals(Integer(42),value)
+        m.remove("clé")
+        assertTrue(m.isEmpty())
+        val keys = m.keys
+        assertTrue(keys.isEmpty())
     }
 }
