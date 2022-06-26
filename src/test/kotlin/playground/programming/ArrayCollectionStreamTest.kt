@@ -76,12 +76,19 @@ class ArrayCollectionStreamTest {
         var dll: List<String> = LinkedList<String>()
 
         //plus efficace
-        val l = ArrayList<String>()
+        val l = java.util.ArrayList<String>()
         l.addAll(ss)
         l.addAll(1, ss)
 
         val obj = l.get(1)
         val obj_prime = l[1]
         assertEquals(obj, obj_prime)
+
+        l.set(3,"nouvel élément")
+        l.add("test")
+        l.add(0,"test2")
+        l.removeAt(1)
+        l.remove("a")
+
     }
 }
